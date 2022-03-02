@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario animado</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <div class="formulario">
+        <div class="user-icon">
+            <span class="fa fa-user"></span>
+        </div>
+        <h1>Iniciar Sección</h1>
+        <form action="">
+            <input id="use" type="text" placeholder=" " >
+            <label for="use">Usuario</label>
+            <input id="password" type="password" placeholder=" ">
+            <label for="password">Contraseña</label>
+            <span class="fa fa-eye"></span>
+            <div class="texto">
+                <a href="#">
+                    <span>¿Olvido su Contraseña?</span>
+                </a>
+                <span>¿No tiene cuenta? <a href="#">Registrarse</a></span>
+            </div>
+            <button type="submit">Iniciar</button>
+        </form>
+        
+    </div>
+    <script>
+        const ojo = document.querySelector('.formulario form > span');
+        const input = document.getElementById('password');
+        const iconUser = document.querySelector('.user-icon');
+        window.addEventListener('load', function (e) {
+            iconUser.style.opacity = 1;
+        });
+        ojo.addEventListener('click', function () {
+            input.type=='password'?
+                (input.setAttribute('type','text'), ojo.classList.add("fa-eye-slash")):
+                (input.setAttribute('type','password'),
+                ojo.classList.remove("fa-eye-slash"));
+            
+        });
+
+    </script>
+</body>
+</html>
